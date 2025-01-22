@@ -13,6 +13,16 @@ const Comment = require('./models/Comment.model');
 const axios = require('axios');
 const cheerio = require('cheerio');
 const ArabicSub = require("./models/ArabicSub");
+const cors = require('cors');
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true, // Allow cookies if needed
+}));
+
+// Alternatively, allow all origins (not recommended for production)
+app.use(cors());
 
 const app = express();
 const port = 3000;
